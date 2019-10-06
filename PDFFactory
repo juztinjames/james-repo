@@ -1,0 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.reformats.pdfutil;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author justin
+ */
+public class PDFFactory {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        try {
+            // TODO code application logic here
+            
+            System.out.println("here we go");
+            computeMD5Hash("12345");
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(PDFFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public static String computeHash(String filePath) {
+        
+        return "";
+    }
+    
+    public static String computeMD5Hash(String password) throws NoSuchAlgorithmException {
+        
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+        byte [] hashBytes = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+        
+        StringBuilder builder = new StringBuilder();
+        
+        for(byte b : hashBytes) {
+            builder.append(String.format("%02x", b));
+        }
+        
+        System.out.println("hash--> "+builder.toString());
+        
+        return "";
+        
+    }
+    
+    public static String signPDF(String hash) {
+        
+        
+        return "";
+    }
+    
+    
+    
+    
+    
+    
+}
